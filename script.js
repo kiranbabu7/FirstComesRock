@@ -8,7 +8,9 @@ function computerPlay() {
 
 //Logic to Declare winner of the round
 function playRound(playerSelection, computerSelection) {
-  console.log(`You Choose: ${playerSelection}, Bot: ${computerSelection}`);
+  console.log(
+    `You Choose: ${playerSelection.toLowerCase()}, Bot: ${computerSelection}`
+  );
   playerSelection = playerSelection.toLowerCase();
 
   //User Lose cases in Rock paper Scissors will only check for lose match
@@ -36,9 +38,9 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   let playerScore = 0;
   let botScore = 0;
-  for (round = 1; round <= 5; round++) {
+  for (let round = 1; round <= 5; round++) {
     let playerSelection = prompt("Enter Rock, Paper or Scissors");
-    if (hand.includes(playerSelection)) {
+    if (hand.includes(playerSelection.toLowerCase())) {
       let roundResult = playRound(playerSelection, computerPlay());
       if (roundResult == "tie") {
         console.log(`It's a Tie, Play Again`);
